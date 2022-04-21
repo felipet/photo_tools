@@ -1,0 +1,13 @@
+[package]
+name = "photo_tools"
+description = "A command-line tool to automatize booring photo managament tasks"
+license = "GPL v3"
+license-file = "COPYING"
+version = "0.7.0"
+edition = "2021"
+author = "Felipe Torres González"
+categories = ["command-line-utilities", "photography"]
+
+[dependencies]
+argparse = "0.2.2"
+chrono = "0.4.19"
