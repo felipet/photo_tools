@@ -101,8 +101,12 @@ fn main() {
 
     let photo_db = photo_database(&photo, options.verbose).unwrap();
 
-    match delete_photos(&photo, &photo_db, options.photo_del, options.verbose) {
-        Ok(_) => println!("All done!"),
-        Err(error) => println!("{:?}", error),
-    };
+    if photo_db.len() > 1 {
+        match delete_photos(&photo, &photo_db, options.photo_del, options.verbose) {
+            Ok(_) => println!("\nAll done!"),
+            Err(error) => println!("\n{:?}", error),
+        };
+    } else {
+        println!("\nNo pictures found matching the given filter.");
+    }
 }
